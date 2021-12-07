@@ -1,0 +1,46 @@
+"/repos/{owner}/{repo}/hooks": {
+    "x-ms-notification-content": {
+    "description": "Details for Webhook",
+    "schema": {
+        "$ref": "#/definitions/WebhookPushResponse"
+    }
+    },
+    "post": {
+    "description": "Creates a Github webhook",
+    "summary": "Triggers when a PUSH event occurs",
+    "operationId": "webhook-trigger",
+    "x-ms-trigger": "single",
+    "parameters": [
+        {
+        "name": "owner",
+        "in": "path",
+        "description": "Name of the owner of targeted repository",
+        "required": true,
+        "type": "string"
+        },
+        {
+        "name": "repo",
+        "in": "path",
+        "description": "Name of the repository",
+        "required": true,
+        "type": "string"
+        },
+        {
+        "name": "Request body of webhook",
+        "in": "body",
+        "description": "This is the request body of the Webhook",
+        "schema": {
+            "$ref": "#/definitions/WebhookRequestBody"
+        }
+        }
+    ],
+    "responses": {
+        "201": {
+        "description": "Created",
+        "schema": {
+            "$ref": "#/definitions/WebhookCreationResponse"
+        }
+        }
+    }
+    }
+},
