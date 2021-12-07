@@ -44,3 +44,32 @@
     }
     }
 },
+"/repos/{owner}/{repo}/hooks/{hook_Id}": {
+    "delete": {
+    "description": "Deletes a Github webhook",
+    "operationId": "DeleteTrigger",
+    "parameters": [
+        {
+        "name": "owner",
+        "in": "path",
+        "description": "Name of the owner of targeted repository",
+        "required": true,
+        "type": "string"
+        },
+        {
+        "name": "repo",
+        "in": "path",
+        "description": "Name of the repository",
+        "required": true,
+        "type": "string"
+        },
+        {
+        "name": "hook_Id",
+        "in": "path",
+        "description": "ID of the Hook being deleted",
+        "required": true,
+        "type": "string"
+        }
+    ]
+    }
+}
